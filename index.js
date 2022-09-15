@@ -23,15 +23,18 @@ console.log(`There is ${getFilmingLocationsNumber()} filming locations in Paris`
 // 1. Implement the function
 // 2. Log the first and last item in array
 function sortFilmingLocationsByStartDate () {
-	return ''
+	const listStartDate =  filmingLocations.sort(function(a,b){
+		return b.fields.date_debut - b.fields.date_debut;
+	});
+	return listStartDate[0]
 }
-console.log(``)
+console.log(sortFilmingLocationsByStartDate())
 
 // 📝 TODO: Number of filming locations in 2020 only
 // 1. Make the function return the number of filming locations in 2020 only
 // 2. Log the result
 function getFilmingLocationsNumber2020 () {
-	return filmingLocations.
+
 }
 console.log()
 
