@@ -15,7 +15,7 @@ console.log('🚀 It Works!');
 // 📝 TODO: Number of filming locations
 // 1. Make the function return the number of filming locations
 function getFilmingLocationsNumber () {
-	return ''
+	return filmingLocations.length
 }
 console.log(`There is ${getFilmingLocationsNumber()} filming locations in Paris`)
 
@@ -31,7 +31,7 @@ console.log(``)
 // 1. Make the function return the number of filming locations in 2020 only
 // 2. Log the result
 function getFilmingLocationsNumber2020 () {
-	return ''
+	return filmingLocations.
 }
 console.log()
 
