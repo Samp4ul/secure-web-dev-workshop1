@@ -36,9 +36,10 @@ console.log(listFinale[0],listFinale[listFinale.length-1])
 // 1. Make the function return the number of filming locations in 2020 only
 // 2. Log the result
 function getFilmingLocationsNumber2020 () {
-
+	let list2020 = filmingLocations.filter(x => new Date(x.fields.date_debut).getFullYear()==2020)
+	return list2020.length
 }
-console.log()
+console.log(getFilmingLocationsNumber2020())
 
 // 📝 TODO: Number of filming locations per year
 // 1. Implement the function, the expected result is an object with years as
