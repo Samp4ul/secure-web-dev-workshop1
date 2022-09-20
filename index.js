@@ -50,9 +50,12 @@ console.log(getFilmingLocationsNumber2020())
 //    }
 // 2. Log the result
 function getFilmingLocationsNumberPerYear () {
-	return {}
+	let filmsNumberYear = new Map();
+	filmingLocations.forEach(x => filmsNumberYear.set(new Date(x.fields.date_debut).getFullYear(), filmsNumberYear.get(new Date(x.fields.date_debut).getFullYear()) + 1 || 1))
+
+	return filmsNumberYear;
 }
-console.log()
+console.log(getFilmingLocationsNumberPerYear())
 
 // 📝 TODO: Number of filming locations by district (arrondissement)
 // 1. Implement the function, the expected result is an object with
