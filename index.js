@@ -104,14 +104,26 @@ function getArseneFilmingLocations () {
 }
 console.log(getArseneFilmingLocations())
 
-// 📝 TODO 9: Tous les arrondissement des lieux de tournage de nos films favoris
+// 📝 TODO 9: Tous les arrondissement des lieux de tournage de nos films favoris (pas fini)
 //  (favoriteFilms)
 // 1. Return an array of all the districts of each favorite films given as a
 //    parameter. e.g. :
 //    const films = { 'LRDM - Patriot season 2': ['75013'] }
 // 2. Log the result
 function getFavoriteFilmsLocations (favoriteFilmsNames) {
-	return []
+	/*
+	let favoriteFilmsLocations = new Map();
+	for (const item in filmingLocations)
+		{
+			if(favoriteFilmsNames.includes(item.fields.nom_tournage))
+			{
+				favoriteFilmsLocations.set(item.fields.nom_tournage,item.fields.ardt_lieu);
+			}
+		}
+
+	return favoriteFilmsLocations
+
+ */
 }
 const favoriteFilms =
 	[
@@ -119,6 +131,8 @@ const favoriteFilms =
 		'Alice NEVERS',
 		'Emily in Paris',
 	]
+
+//console.log(getFavoriteFilmsLocations (favoriteFilms))
 
 // 📝 TODO 10: All filming locations for each film
 //     e.g. :
@@ -134,9 +148,12 @@ function getFilmingLocationsPerFilm () {
 // 1. Implement the function
 // 2. Log the result
 function countFilmingTypes () {
-	return {}
-}
+	let filmsNumberType = new Map();
+	filmingLocations.forEach(x => filmsNumberType.set(x.fields.type_tournage, filmsNumberType.get(x.fields.type_tournage) + 1 || 1))
 
+	return filmsNumberType;
+}
+console.log(countFilmingTypes ())
 // 📝 TODO 12: Sort each type of filming by count, from highest to lowest
 // 1. Implement the function. It should return a sorted array of objects like:
 //    [{type: 'Long métrage', count: 1234}, {...}]
