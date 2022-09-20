@@ -92,14 +92,19 @@ function getNumberOfFilms() {
 }
 console.log(`There is ${getNumberOfFilms()} different films in the list`)
 
-// 📝 TODO: All the filming locations of `LRDM - Patriot season 2`
+// 📝 TODO 8: All the filming locations of `LRDM - Patriot season 2`
 // 1. Return an array with all filming locations of LRDM - Patriot season 2
 // 2. Log the result
 function getArseneFilmingLocations () {
-	return []
-}
+	let listLRDM = filmingLocations.filter(x => x.fields.nom_tournage=='LRDM - Patriot season 2');
+	let listLocationsLRDM = new Array();
+	listLRDM.forEach(x => listLocationsLRDM.push(x.fields.adresse_lieu));
 
-// 📝 TODO: Tous les arrondissement des lieux de tournage de nos films favoris
+	return listLocationsLRDM;
+}
+console.log(getArseneFilmingLocations())
+
+// 📝 TODO 9: Tous les arrondissement des lieux de tournage de nos films favoris
 //  (favoriteFilms)
 // 1. Return an array of all the districts of each favorite films given as a
 //    parameter. e.g. :
@@ -115,7 +120,7 @@ const favoriteFilms =
 		'Emily in Paris',
 	]
 
-// 📝 TODO: All filming locations for each film
+// 📝 TODO 10: All filming locations for each film
 //     e.g. :
 //     const films = {
 //        'LRDM - Patriot season 2': [{...}],
@@ -125,14 +130,14 @@ function getFilmingLocationsPerFilm () {
 	return { }
 }
 
-// 📝 TODO: Count each type of film (Long métrage, Série TV, etc...)
+// 📝 TODO 11: Count each type of film (Long métrage, Série TV, etc...)
 // 1. Implement the function
 // 2. Log the result
 function countFilmingTypes () {
 	return {}
 }
 
-// 📝 TODO: Sort each type of filming by count, from highest to lowest
+// 📝 TODO 12: Sort each type of filming by count, from highest to lowest
 // 1. Implement the function. It should return a sorted array of objects like:
 //    [{type: 'Long métrage', count: 1234}, {...}]
 // 2. Log the result
@@ -148,10 +153,10 @@ function sortedCountFilmingTypes () {
  */
 const duration = (ms) => `${(ms/(1000*60*60*24)).toFixed(0)} days, ${((ms/(1000*60*60))%24).toFixed(0)} hours and ${((ms/(1000*60))%60).toFixed(0)} minutes`
 
-// 📝 TODO: Find the filming location with the longest duration
+// 📝 TODO 13: Find the filming location with the longest duration
 // 1. Implement the function
 // 2. Log the filming location, and its computed duration
 
-// 📝 TODO: Compute the average filming duration
+// 📝 TODO 14: Compute the average filming duration
 // 1. Implement the function
 // 2. Log the result
