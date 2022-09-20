@@ -177,6 +177,15 @@ const duration = (ms) => `${(ms/(1000*60*60*24)).toFixed(0)} days, ${((ms/(1000*
 // 📝 TODO 13: Find the filming location with the longest duration
 // 1. Implement the function
 // 2. Log the filming location, and its computed duration
+//On ajoute 86400000 (nombre de ms sur un jour) à chaque calcul car un tournage sur un seul jour comptera pour 0 jour de tournage dans le calcul (on fait la diff de jours entre le début et la fin)
+function longestDurationFilming(){
+	let durationTime = new Map();
+	filmingLocations.forEach(x =>durationTime.set(x.fields.adresse_lieu,durationTime.get(x.fields.adresse_lieu)+(new Date(x.fields.date_fin) - new Date(x.fields.date_debut))+86400000||(new Date(x.fields.date_fin) - new Date(x.fields.date_debut))+86400000));
+	let sortedDurationTime = [...durationTime].sort((a,b)=>b[1]-a[1]);
+	sortedDurationTime.forEach(x => x[1]=duration(x[1]));
+	return sortedDurationTime[0]
+}
+console.log(longestDurationFilming())
 
 // 📝 TODO 14: Compute the average filming duration
 // 1. Implement the function
