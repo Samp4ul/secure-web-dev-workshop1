@@ -66,9 +66,12 @@ console.log(getFilmingLocationsNumberPerYear())
 //    }
 // 2. Log the result
 function getFilmingLocationsNumberPerDistrict () {
-	return {}
+	let filmsNumberYear = new Map();
+	filmingLocations.forEach(x => filmsNumberYear.set(x.fields.ardt_lieu, filmsNumberYear.get(x.fields.ardt_lieu) + 1 || 1))
+
+	return filmsNumberYear;
 }
-console.log()
+console.log(getFilmingLocationsNumberPerDistrict())
 
 // 📝 TODO: Number of locations per film, sorted in descending order
 // 1. Implement the function, result expected as an array of object like:
