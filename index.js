@@ -12,14 +12,14 @@ console.log('🚀 It Works!');
  * Good luck, have fun !
  */
 
-// 📝 TODO: Number of filming locations
+// 📝 TODO 1: Number of filming locations
 // 1. Make the function return the number of filming locations
 function getFilmingLocationsNumber () {
 	return filmingLocations.length
 }
 console.log(`There is ${getFilmingLocationsNumber()} filming locations in Paris`)
 
-// 📝 TODO: Filming locations sorted by start date, from most recent to oldest.
+// 📝 TODO 2: Filming locations sorted by start date, from most recent to oldest.
 // 1. Implement the function
 // 2. Log the first and last item in array
 function sortFilmingLocationsByStartDate () {
@@ -32,16 +32,16 @@ function sortFilmingLocationsByStartDate () {
 let listFinale =sortFilmingLocationsByStartDate()
 console.log(listFinale[0],listFinale[listFinale.length-1])
 
-// 📝 TODO: Number of filming locations in 2020 only
+// 📝 TODO 3: Number of filming locations in 2020 only
 // 1. Make the function return the number of filming locations in 2020 only
 // 2. Log the result
 function getFilmingLocationsNumber2020 () {
 	let list2020 = filmingLocations.filter(x => new Date(x.fields.date_debut).getFullYear()==2020)
 	return list2020.length
 }
-console.log(getFilmingLocationsNumber2020())
+console.log(`There are ${getFilmingLocationsNumber2020()} filming locations in 2020 `)
 
-// 📝 TODO: Number of filming locations per year
+// 📝 TODO 4: Number of filming locations per year
 // 1. Implement the function, the expected result is an object with years as
 // keys and filming locations number as value, e.g:
 //    const filmingLocationsPerYear = {
@@ -57,7 +57,7 @@ function getFilmingLocationsNumberPerYear () {
 }
 console.log(getFilmingLocationsNumberPerYear())
 
-// 📝 TODO: Number of filming locations by district (arrondissement)
+// 📝 TODO 5: Number of filming locations by district (arrondissement)
 // 1. Implement the function, the expected result is an object with
 // district as keys and filming locations number as value, e.g:
 //    const filmingLocationsPerDistrict = {
@@ -73,7 +73,7 @@ function getFilmingLocationsNumberPerDistrict () {
 }
 console.log(getFilmingLocationsNumberPerDistrict())
 
-// 📝 TODO: Number of locations per film, sorted in descending order
+// 📝 TODO 6: Number of locations per film, sorted in descending order
 // 1. Implement the function, result expected as an array of object like:
 //    const result = [{film: 'LRDM - Patriot season 2', locations: 12}, {...}]
 // 2. Log the first and last item of the array
@@ -82,12 +82,15 @@ function getFilmLocationsByFilm () {
 }
 console.log()
 
-// 📝 TODO: Number of different films
+// 📝 TODO 7: Number of different films
 // 1. Implement the function
 // 2. Log the result
 function getNumberOfFilms() {
-	return ''
+	let listFilms = new Map();
+	filmingLocations.forEach(x => listFilms.set(x.fields.nom_tournage, listFilms.get(x.fields.nom_tournage) + 1 || 1))
+	return listFilms.size;
 }
+console.log(`There is ${getNumberOfFilms()} different films in the list`)
 
 // 📝 TODO: All the filming locations of `LRDM - Patriot season 2`
 // 1. Return an array with all filming locations of LRDM - Patriot season 2
