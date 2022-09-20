@@ -159,9 +159,13 @@ console.log(countFilmingTypes ())
 //    [{type: 'Long métrage', count: 1234}, {...}]
 // 2. Log the result
 function sortedCountFilmingTypes () {
-	return []
-}
+	let filmsNumberType = new Map();
+	filmingLocations.forEach(x => filmsNumberType.set(x.fields.type_tournage, filmsNumberType.get(x.fields.type_tournage) + 1 || 1))
 
+	const sortedFilmingType = [...filmsNumberType].sort((a,b)=>b[1]-a[1]);
+	return sortedFilmingType
+}
+console.log(sortedCountFilmingTypes())
 /**
  * This arrow functions takes a duration in milliseconds and returns a
  * human-readable string of the duration
