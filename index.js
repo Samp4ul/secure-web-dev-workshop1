@@ -190,3 +190,10 @@ console.log(longestDurationFilming())
 // 📝 TODO 14: Compute the average filming duration
 // 1. Implement the function
 // 2. Log the result
+
+function averageFilmDuration(){
+	let averageDuration = 0;
+	filmingLocations.forEach(x => averageDuration = averageDuration+(new Date(x.fields.date_fin) - new Date(x.fields.date_debut))+86400000)
+	return averageDuration/getNumberOfFilms();
+}
+console.log(`Average film duration : ${duration(averageFilmDuration())}`)
